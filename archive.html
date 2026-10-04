@@ -1,0 +1,12 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+---
+<h1>Archive</h1>
+{% assign briefs = site.briefs | sort: "date" | reverse %}
+<ul class="archive">
+{% for b in briefs %}
+  <li><a href="{{ b.url | relative_url }}">{{ b.date | date: "%A %-d %B %Y" }}</a>{% if b.edition %} ({{ b.edition }}){% endif %}</li>
+{% endfor %}
+</ul>

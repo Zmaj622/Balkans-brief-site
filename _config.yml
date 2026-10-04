@@ -1,0 +1,19 @@
+title: Balkans Brief
+description: Daily early-warning brief on political, security, corruption and organised-crime developments in Kosovo, Serbia, Bosnia and Herzegovina, Montenegro, Albania, North Macedonia and Croatia.
+markdown: kramdown
+kramdown:
+  input: GFM
+
+collections:
+  briefs:
+    output: true
+    permalink: /briefs/:name/
+
+defaults:
+  - scope:
+      type: briefs
+    values:
+      layout: brief
+
+exclude:
+  - README.md

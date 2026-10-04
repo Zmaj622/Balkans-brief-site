@@ -1,0 +1,13 @@
+---
+layout: default
+---
+{% assign briefs = site.briefs | sort: "date" | reverse %}
+{% assign latest = briefs | first %}
+{% if latest %}
+<p class="brief-date">Latest brief: {{ latest.date | date: "%A %-d %B %Y" }} · <a href="{{ latest.url | relative_url }}">permanent link</a></p>
+<article class="brief">
+  {{ latest.content | markdownify }}
+</article>
+{% else %}
+<p>No briefs published yet.</p>
+{% endif %}
