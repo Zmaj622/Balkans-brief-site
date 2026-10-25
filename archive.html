@@ -4,6 +4,21 @@ title: Archive
 permalink: /archive/
 ---
 <h1>Archive</h1>
+<h2>Weekly OCG round-ups</h2>
+{% assign roundups = site.ocg_roundups | sort: "date" | reverse %}
+<ul class="archive">
+{% for r in roundups %}
+  <li><a href="{{ r.url | relative_url }}">{{ r.date | date: "%A %-d %B %Y" }}</a></li>
+{% endfor %}
+</ul>
+<h2>Weekly hybrid activity reports</h2>
+{% assign hybrids = site.hybrid_reports | sort: "date" | reverse %}
+<ul class="archive">
+{% for h in hybrids %}
+  <li><a href="{{ h.url | relative_url }}">{{ h.date | date: "%A %-d %B %Y" }}</a></li>
+{% endfor %}
+</ul>
+<h2>Daily briefs</h2>
 {% assign briefs = site.briefs | sort: "date" | reverse %}
 <ul class="archive">
 {% for b in briefs %}

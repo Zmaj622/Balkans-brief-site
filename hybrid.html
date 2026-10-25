@@ -1,0 +1,15 @@
+---
+layout: default
+title: Hybrid activity report
+permalink: /hybrid/
+---
+{% assign reports = site.hybrid_reports | sort: "date" | reverse %}
+{% assign latest = reports | first %}
+{% if latest %}
+<p class="brief-date">Latest hybrid activity report: {{ latest.date | date: "%A %-d %B %Y" }} · <a href="{{ latest.url | relative_url }}">permanent link</a></p>
+<article class="brief">
+  {{ latest.content | markdownify }}
+</article>
+{% else %}
+<p>No hybrid activity reports published yet.</p>
+{% endif %}

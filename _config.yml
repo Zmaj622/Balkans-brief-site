@@ -1,5 +1,5 @@
 title: Balkans Brief
-description: Daily early-warning brief on political, security, corruption and organised-crime developments in Kosovo, Serbia, Bosnia and Herzegovina, Montenegro, Albania, North Macedonia and Croatia.
+description: Daily early-warning brief on political, security, corruption and organised-crime developments, with weekly organised crime and corruption round-ups and hybrid activity reports, in Kosovo, Serbia, Bosnia and Herzegovina, Montenegro, Albania, North Macedonia and Croatia.
 markdown: kramdown
 kramdown:
   input: GFM
@@ -8,10 +8,24 @@ collections:
   briefs:
     output: true
     permalink: /briefs/:name/
+  ocg_roundups:
+    output: true
+    permalink: /ocg-roundup/:name/
+  hybrid_reports:
+    output: true
+    permalink: /hybrid/:name/
 
 defaults:
   - scope:
       type: briefs
+    values:
+      layout: brief
+  - scope:
+      type: ocg_roundups
+    values:
+      layout: brief
+  - scope:
+      type: hybrid_reports
     values:
       layout: brief
 

@@ -1,0 +1,15 @@
+---
+layout: default
+title: OCG round-up
+permalink: /ocg-roundup/
+---
+{% assign reports = site.ocg_roundups | sort: "date" | reverse %}
+{% assign latest = reports | first %}
+{% if latest %}
+<p class="brief-date">Latest OCG round-up: {{ latest.date | date: "%A %-d %B %Y" }} · <a href="{{ latest.url | relative_url }}">permanent link</a></p>
+<article class="brief">
+  {{ latest.content | markdownify }}
+</article>
+{% else %}
+<p>No OCG round-ups published yet.</p>
+{% endif %}
